@@ -31,7 +31,6 @@
 		FCA5BD841D8DE1EF00E5C7EA /* AlertDialog.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA5BD831D8DE1EF00E5C7EA /* AlertDialog.png */; };
 		FCA5BD871D8DE7FB00E5C7EA /* MyUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA5BD861D8DE7FB00E5C7EA /* MyUserDefaults.m */; };
 		FCA5BD8B1D8DF4DB00E5C7EA /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA5BD8A1D8DF4DB00E5C7EA /* icon-settings.png */; };
-		FCA5BD8D1D8DF5B500E5C7EA /* top-nav-dash.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA5BD8C1D8DF5B500E5C7EA /* top-nav-dash.png */; };
 		FCA5BD981D8DF73D00E5C7EA /* AlertDialog.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA5BD8E1D8DF73D00E5C7EA /* AlertDialog.png */; };
 		FCA5BD991D8DF73D00E5C7EA /* bottom-nav-stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA5BD8F1D8DF73D00E5C7EA /* bottom-nav-stripe.png */; };
 		FCA5BD9A1D8DF73D00E5C7EA /* icon-appt.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA5BD901D8DF73D00E5C7EA /* icon-appt.png */; };

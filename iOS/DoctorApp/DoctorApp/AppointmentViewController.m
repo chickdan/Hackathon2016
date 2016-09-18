@@ -7,8 +7,11 @@
 //
 
 #import "AppointmentViewController.h"
+#import "PatientProfileViewController.h"
+
 
 @interface AppointmentViewController ()
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *profileTapGesture;
 
 @end
 
@@ -33,5 +36,8 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+- (IBAction)profileTapGesture:(id)sender{
+    PatientProfileViewController* patientProfileViewController = [[PatientProfileViewController alloc] initWithNibName:@"PatientProfileViewController" bundle:nil];
+    [self.navigationController pushViewController:patientProfileViewController animated:YES];
+}
 @end

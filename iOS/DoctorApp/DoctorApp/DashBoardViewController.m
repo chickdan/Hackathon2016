@@ -7,6 +7,7 @@
 //
 
 #import "DashBoardViewController.h"
+#import "PatientProfileViewController.h"
 #import "DataBaseManager.h"
 #import "MyUserDefaults.h"
 #import "DashBoardTableViewCell.h"
@@ -16,6 +17,7 @@ NSString* dateFormat = @"yyyy-MM-dd HH:mm";
 @interface DashBoardViewController ()
 @property (nonatomic, strong) NSMutableArray* upcomingAppointmentsTableDataSource;
 @property (nonatomic, strong) IBOutlet UITableView* upcomingAppointmentsTable;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *profileTapGesture;
 @end
 
 @implementation DashBoardViewController
@@ -136,6 +138,9 @@ NSString* dateFormat = @"yyyy-MM-dd HH:mm";
     return 0;
 }
 
-
+- (IBAction)profileTapGesture:(id)sender{
+    PatientProfileViewController* patientProfileViewController = [[PatientProfileViewController alloc] initWithNibName:@"PatientProfileViewController" bundle:nil];
+    [self.navigationController pushViewController:patientProfileViewController animated:YES];
+}
 
 @end
