@@ -31,7 +31,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="OyA-lm-xcl">
-                    <frame key="frameInset" minY="629" width="125" height="25"/>
+                    <frame key="frameInset" minX="81" minY="629" width="94" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <connections>
@@ -39,11 +39,15 @@
                     </connections>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-appt.png" translatesAutoresizingMaskIntoConstraints="NO" id="9sK-A1-bRZ">
-                    <frame key="frameInset" minX="125" minY="629" width="125" height="25"/>
+                    <frame key="frameInset" minX="184" minY="629" width="94" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-presc.png" translatesAutoresizingMaskIntoConstraints="NO" id="e7k-ka-kZh">
-                    <frame key="frameInset" minX="249" minY="629" width="125" height="25"/>
+                    <frame key="frameInset" minX="277" minY="629" width="94" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-home.png" translatesAutoresizingMaskIntoConstraints="NO" id="W3y-lc-r2b">
+                    <frame key="frameInset" minY="630" width="94" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -54,6 +58,7 @@
     <resources>
         <image name="bottom-nav-stripe.png" width="1125" height="150"/>
         <image name="icon-appt.png" width="75" height="75"/>
+        <image name="icon-home.png" width="93" height="75"/>
         <image name="icon-presc.png" width="72" height="72"/>
         <image name="icon-profile.png" width="75" height="75"/>
         <image name="icon-settings.png" width="72" height="72"/>
