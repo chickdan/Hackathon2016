@@ -12,13 +12,19 @@
 #import "PrescriptionViewController.h"
 #import "MyUserDefaults.h"
 
-@interface PatientProfileViewController ()
+@interface PatientProfileViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *patientIDLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *appointmentImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *homeImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *prescriptionImageView;
+@property (weak, nonatomic) IBOutlet UITextField *addressOneField;
+@property (weak, nonatomic) IBOutlet UITextField *cityField;
+@property (weak, nonatomic) IBOutlet UITextField *zipField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *stateField;
 
 @end
 
@@ -26,6 +32,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.addressOneField.delegate = self;
+    self.cityField.delegate = self;
+    self.zipField.delegate = self;
+    self.phoneField.delegate = self;
+    self.emailField.delegate = self;
+    self.stateField.delegate = self;
+    
     self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
     self.profilePicture.clipsToBounds = YES;
     
@@ -69,14 +83,47 @@
                 
                 // update the UI here (and only here to the extent it depends on the json)
             
-                //address = [json objectForKey:@"address"];
-                //city = [json objectForKey:@"address-city"];
-                //zipcode = [json objectForKey:@"address-postalcode"];
-                //state = [json objectForKey:@"address-state"];
+                if([json objectForKey:@"address"] != nil){
+                    NSArray *address = [json objectForKey:@"address"];
+                    
+                    for (NSDictionary* dict in address) {
+                        
+                        for(NSString* key in dict)
+                        {
+                            NSString* value = [dict valueForKey:key];
+                            
+                            if([key isEqualToString:@"line"]){
+                                _addressOneField.text = value;
+                            } else if([key isEqualToString:@"address-city"]){
+                                _cityField.text = value;
+                            } else if([key isEqualToString:@"address-postalcode"]){
+                                _zipField.text = value;
+                            } else if([key isEqualToString:@"address-state"]){
+                                _stateField.text = value;
+                            }
+                            
+                        }
+                        
+                    }
+                }
+                
+                if([json objectForKey:@"telecom"] != nil){
+                    NSArray *telecom = [json objectForKey:@"telecom"];
+                    for(NSDictionary* dict in telecom){
+                        for(NSString*  key in dict){
+                            NSString* value = [dict valueForKey:key];
+                            
+                            if([key isEqualToString:@"system"] && [value isEqualToString:@"email"]){
+                                _emailField.text = [dict objectForKey:@"value"];
+                            } else if([key isEqualToString:@"system"] && [value isEqualToString:@"phone"]){
+                                _phoneField.text = [dict objectForKey:@"value"];
+                            }
+                        }
+                    }
+                }
+                
                 //name = [json objectForKey:@"name"];
                 //gender = [json objectForKey:@"gender"];
-                //email = [json objectForKey:@"email"];
-                //phone = [json objectForKey:@"phone"];
                 //dob = [json objectForKey:@"birthdate"];
             }
         } else {
@@ -118,8 +165,6 @@
                                if (!error) {
                                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                }
-                               
-                               
     }];
     
 }
@@ -142,14 +187,46 @@
 - (IBAction)saveProfile:(UIButton *)sender
 {
     NSMutableDictionary *jsonToPost = [NSMutableDictionary new];
-    //[jsonToPost setObject:address.text forKey:@"address"];
-    //[jsonToPost setObject:city.text forKey:@"address-city"];
-    //[jsonToPost setObject:zipcode.text forKey:@"address-postalcode"];
-    //[jsonToPost setObject:state.text forKey:@"address-state"];
+    
+    NSMutableDictionary* addressVal = [[NSMutableDictionary alloc] init];
+    NSMutableArray* addressLines = [[NSMutableArray alloc] init];
+    [addressLines addObject:_addressOneField.text];
+    [addressVal setObject:addressLines forKey:@"line"];
+    [addressVal setObject:_cityField.text forKey:@"city"];
+    [addressVal setObject:_zipField.text forKey:@"postalcode"];
+    [addressVal setObject:_stateField.text forKey:@"state"];
+    NSArray *addressArray = [NSArray arrayWithObject:addressVal];
+    
+    [jsonToPost setObject:addressArray forKey:@"address"];
+    
+    
+    NSMutableDictionary* telcomVal = [[NSMutableDictionary alloc] init];
+    [telcomVal setObject:@"phone" forKey:@"system"];
+    [telcomVal setObject:_phoneField.text forKey:@"value"];
+    NSArray *telcomArray = [NSArray arrayWithObject:telcomVal];
+    
+    [jsonToPost setObject:telcomArray forKey:@"telecom"];
+    
     //[jsonToPost setObject:gender.text forKey:@"gender"];
-    //[jsonToPost setObject:email.text forKey:@"email"];
-    //[jsonToPost setObject:phone.text forKey:@"phone"];
     //[jsonToPost setObject:dob.text forKey:@"birthdate"];
+    
+    NSString *patientURL = [@"https://fhir-open-api-dstu2.smarthealthit.org/Patient/" stringByAppendingString:[MyUserDefaults retrievePatientId]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:patientURL]];
+    
+    NSError* error;
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:jsonToPost options:0 error: &error];
+    [request setHTTPMethod:@"PUT"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+    [request setHTTPBody:postData];
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               
+                               if (!error) {
+                                   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                               }
+                           }];
     
 }
 
@@ -169,5 +246,11 @@
 {
     PrescriptionViewController* prescriptionViewController = [[PrescriptionViewController alloc] initWithNibName:@"PrescriptionViewController" bundle:nil];
     [self.navigationController pushViewController:prescriptionViewController animated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return true;
 }
 @end
