@@ -48,45 +48,61 @@
 }
 
 - (void)requestPatientData {
-    NSString *patientURL = [@"https://fhir-api-dstu2.smarthealthit.org/Patient/" stringByAppendingString:[MyUserDefaults retrievePatientId]];
+    NSString *patientURL = [@"https://fhir-open-api-dstu2.smarthealthit.org/Patient/" stringByAppendingString:[MyUserDefaults retrievePatientId]];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:patientURL]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
         if (!error) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
             
-            NSError* jsonError;
-            NSDictionary* json = [NSJSONSerialization JSONObjectWithData: request options: NSJSONReadingMutableContainers error: &jsonError];
+            if(404 == [httpResponse statusCode]){
+                [self newFhirUser:patientURL];
+            } else {
             
-            // update the UI here (and only here to the extent it depends on the json)
+                NSError* jsonError;
+                NSDictionary* json = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &jsonError];
+                
+                // update the UI here (and only here to the extent it depends on the json)
             
-            //address = [json objectForKey:@"address"];
-            //city = [json objectForKey:@"address-city"];
-            //zipcode = [json objectForKey:@"address-postalcode"];
-            //state = [json objectForKey:@"address-state"];
-            //name = [json objectForKey:@"name"];
-            //gender = [json objectForKey:@"gender"];
-            //email = [json objectForKey:@"email"];
-            //phone = [json objectForKey:@"phone"];
-            //dob = [json objectForKey:@"birthdate"];
-            
+                //address = [json objectForKey:@"address"];
+                //city = [json objectForKey:@"address-city"];
+                //zipcode = [json objectForKey:@"address-postalcode"];
+                //state = [json objectForKey:@"address-state"];
+                //name = [json objectForKey:@"name"];
+                //gender = [json objectForKey:@"gender"];
+                //email = [json objectForKey:@"email"];
+                //phone = [json objectForKey:@"phone"];
+                //dob = [json objectForKey:@"birthdate"];
+            }
         } else {
-            [self newFhirUser:request];
+            //[self newFhirUser:request];
         }
     }];
 }
 
-- (void)newFhirUser:(NSMutableURLRequest*)request
+- (void)newFhirUser:(NSString*) patientURL
 {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:patientURL]];
     
     NSMutableDictionary *newUser = [NSMutableDictionary new];
     [newUser setObject:@"Patient" forKey:@"resourceType"];
     [newUser setObject:[MyUserDefaults retrievePatientId] forKey:@"id"];
-    [newUser setObject:[MyUserDefaults retrieveEmail] forKey:@"email"];
+    
+    NSMutableDictionary* telcomVal = [[NSMutableDictionary alloc] init];
+    
+    [telcomVal setObject:@"email" forKey:@"system"];
+    
+    [telcomVal setObject:[MyUserDefaults retrieveEmail] forKey:@"value"];
+    
+    NSArray *telcomArray = [NSArray arrayWithObject:telcomVal];
+
+    [newUser setObject:telcomArray forKey:@"telecom"];
+    
     
     NSError* error;
     NSData *postData = [NSJSONSerialization dataWithJSONObject:newUser options:0 error: &error];
@@ -95,7 +111,16 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
     [request setHTTPBody:postData];
     
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               
+                               if (!error) {
+                                   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                               }
+                               
+                               
+    }];
     
 }
                             

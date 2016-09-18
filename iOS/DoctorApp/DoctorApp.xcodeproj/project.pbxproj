@@ -13,6 +13,7 @@
 		84E15CBC1D8E4593009F4DA7 /* PrescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E15CBA1D8E4593009F4DA7 /* PrescriptionViewController.xib */; };
 		84E15CBE1D8E4606009F4DA7 /* top-nav-presc.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E15CBD1D8E4606009F4DA7 /* top-nav-presc.png */; };
 		84E15CC31D8E53EB009F4DA7 /* input-bkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E15CC21D8E53EB009F4DA7 /* input-bkgd.png */; };
+		84E15CC51D8E7E44009F4DA7 /* ngraves-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E15CC41D8E7E44009F4DA7 /* ngraves-copy.png */; };
 		FC1B24F51D8CE24800BC6383 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1B24F41D8CE24800BC6383 /* main.m */; };
 		FC1B24F81D8CE24800BC6383 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1B24F71D8CE24800BC6383 /* AppDelegate.m */; };
 		FC1B25001D8CE24800BC6383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1B24FF1D8CE24800BC6383 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		84E15CBA1D8E4593009F4DA7 /* PrescriptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionViewController.xib; sourceTree = "<group>"; };
 		84E15CBD1D8E4606009F4DA7 /* top-nav-presc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-nav-presc.png"; sourceTree = "<group>"; };
 		84E15CC21D8E53EB009F4DA7 /* input-bkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-bkgd.png"; sourceTree = "<group>"; };
+		84E15CC41D8E7E44009F4DA7 /* ngraves-copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ngraves-copy.png"; sourceTree = "<group>"; };
 		9F17758C0D935106CF2EC7F4 /* Pods-DoctorApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorApp/Pods-DoctorApp.release.xcconfig"; sourceTree = "<group>"; };
 		C44DD532AC8DED116375EE24 /* libPods-DoctorApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoctorApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5249B6D4CB6DC232951D00A /* Pods-DoctorApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorApp/Pods-DoctorApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		FCA5BD7C1D8DDA2200E5C7EA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				84E15CC41D8E7E44009F4DA7 /* ngraves-copy.png */,
 				84E15CC21D8E53EB009F4DA7 /* input-bkgd.png */,
 				FC37EBA71D8E2D3D009AB657 /* icon-home.png */,
 				FC74A12D1D8E25D100DA6021 /* top-nav-appt.png */,
@@ -329,6 +332,7 @@
 				FC1B250B1D8CE48A00BC6383 /* GoogleService-Info.plist in Resources */,
 				FCA5BD9B1D8DF73D00E5C7EA /* icon-presc.png in Resources */,
 				FC74A12E1D8E25D100DA6021 /* top-nav-appt.png in Resources */,
+				84E15CC51D8E7E44009F4DA7 /* ngraves-copy.png in Resources */,
 				FCA5BD9D1D8DF73D00E5C7EA /* icon-settings.png in Resources */,
 				FCA5BD9A1D8DF73D00E5C7EA /* icon-appt.png in Resources */,
 				FCA5BD981D8DF73D00E5C7EA /* AlertDialog.png in Resources */,
