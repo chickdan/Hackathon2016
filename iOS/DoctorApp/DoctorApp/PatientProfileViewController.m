@@ -7,11 +7,16 @@
 //
 
 #import "PatientProfileViewController.h"
+#import "AppointmentViewController.h"
+#import "DashBoardViewController.h"
 #import "MyUserDefaults.h"
 
 @interface PatientProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *patientIDLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *appointmentImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *homeImageView;
 
 @end
 
@@ -75,4 +80,29 @@
 }
 */
 
+- (IBAction)saveProfile:(UIButton *)sender
+{
+    NSMutableDictionary *jsonToPost = [NSMutableDictionary new];
+    //[jsonToPost setObject:address.text forKey:@"address"];
+    //[jsonToPost setObject:city.text forKey:@"address-city"];
+    //[jsonToPost setObject:zipcode.text forKey:@"address-postalcode"];
+    //[jsonToPost setObject:state.text forKey:@"address-state"];
+    //[jsonToPost setObject:gender.text forKey:@"gender"];
+    //[jsonToPost setObject:email.text forKey:@"email"];
+    //[jsonToPost setObject:phone.text forKey:@"phone"];
+    //[jsonToPost setObject:dob.text forKey:@"birthdate"];
+    
+}
+
+- (void)appointmentTapGesture:(id)sender
+{
+    AppointmentViewController* appointmentViewController = [[AppointmentViewController alloc] initWithNibName:@"AppointmentViewController" bundle:nil];
+    [self.navigationController pushViewController:appointmentViewController animated:YES];
+}
+
+- (void)homeTapGesture:(id)sender
+{
+    DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
+    [self.navigationController pushViewController:dashBoardViewController animated:YES];
+}
 @end

@@ -10,4 +10,7 @@
 
 @interface PatientProfileViewController : UIViewController
 
+
+- (IBAction)saveProfile:(UIButton *)sender;
+
 @end

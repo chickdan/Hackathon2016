@@ -87,11 +87,11 @@ NSString* theDateFormat = @"yyyy-MM-dd HH:mm";
     [self.navigationController pushViewController:patientProfileViewController animated:YES];
 }
 
-- (void)appointmentTapGesture:(id)sender
-{
-    AppointmentViewController* appointmentViewController = [[AppointmentViewController alloc] initWithNibName:@"AppointmentViewController" bundle:nil];
-    [self.navigationController pushViewController:appointmentViewController animated:YES];
-}
+//- (void)appointmentTapGesture:(id)sender
+//{
+//    AppointmentViewController* appointmentViewController = [[AppointmentViewController alloc] initWithNibName:@"AppointmentViewController" bundle:nil];
+//    [self.navigationController pushViewController:appointmentViewController animated:YES];
+//}
 
 - (void)homeTapGesture:(id)sender
 {

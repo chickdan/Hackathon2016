@@ -168,10 +168,10 @@ NSString* dateFormat = @"yyyy-MM-dd HH:mm";
     [self.navigationController pushViewController:appointmentViewController animated:YES];
 }
 
-- (void)homeTapGesture:(id)sender
-{
-    DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
-    [self.navigationController pushViewController:dashBoardViewController animated:YES];
-}
+//- (void)homeTapGesture:(id)sender
+//{
+//    DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
+//    [self.navigationController pushViewController:dashBoardViewController animated:YES];
+//}
 
 @end
