@@ -9,18 +9,26 @@
 #import "AppointmentViewController.h"
 #import "PatientProfileViewController.h"
 #import "DashBoardViewController.h"
+#import "DashBoardTableViewCell.h"
+#import "DataBaseManager.h"
+#import "MyUserDefaults.h"
 
+NSString* theDateFormat = @"yyyy-MM-dd HH:mm";
 
 @interface AppointmentViewController ()
+@property (nonatomic, strong) NSMutableArray* dataSource;
 @property (nonatomic, strong) IBOutlet UIImageView* profileIconImageView;
 @property (nonatomic, strong) IBOutlet UIImageView* appointmentImageView;
 @property (nonatomic, strong) IBOutlet UIImageView* homeImageView;
+@property (nonatomic, strong) IBOutlet UITableView* appointmentTableView;
 @end
 
 @implementation AppointmentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.appointmentTableView.delegate = self;
+    self.appointmentTableView.dataSource = self;
     UITapGestureRecognizer* tapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileTapGesture:)];
     [self.profileIconImageView addGestureRecognizer:tapGestrue];
     [self.profileIconImageView setUserInteractionEnabled:YES];
@@ -32,8 +40,41 @@
     UITapGestureRecognizer* homeTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(homeTapGesture:)];
     [self.appointmentImageView addGestureRecognizer:homeTapGesture];
     [self.appointmentImageView setUserInteractionEnabled:YES];
+    
+    self.dataSource = [[NSMutableArray alloc] init];
+    
+    NSString* patientID = [MyUserDefaults retrievePatientId];
+    [[DataBaseManager sharedInstance] retreivePatientAppointmentWithResponseCallback:^(NSDictionary* appointments){
+        
+        for (NSString* key in appointments)
+        {
+            NSDictionary* appointment = [appointments objectForKey:key];
+            
+            if ([[appointment objectForKey:@"patientID"] isEqualToString:patientID])
+            {
+                [self.dataSource addObject:appointment];
+            }
+        }
+        
+        [self reloadData];
+        
+    }];
     // Do any additional setup after loading the view from its nib.
 }
+
+- (UIColor *)colorFromHexString:(NSString *)hexString {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+}
+
+- (void)reloadData
+{
+    [self.appointmentTableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -57,4 +98,66 @@
     DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
     [self.navigationController pushViewController:dashBoardViewController animated:YES];
 }
+
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"DashBoardTableViewCell";
+    
+    NSDictionary* appointment = [self.dataSource objectAtIndex:indexPath.row];
+    
+    DashBoardTableViewCell* cell = (DashBoardTableViewCell* )[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DashBoardTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        
+    }
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:theDateFormat];
+    NSDate* date = [dateFormatter dateFromString:[appointment objectForKey:@"date"]];
+    
+    
+    NSDateFormatter *dayFormatter = [[NSDateFormatter alloc] init];
+    [dayFormatter setDateFormat:@"EEEE"];
+    NSString *dayName = [dayFormatter stringFromDate:date];
+    
+    NSDateComponents *otherDay = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date];
+    NSDateComponents *today = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    
+    if([today day] == [otherDay day] &&
+       [today month] == [otherDay month] &&
+       [today year] == [otherDay year] &&
+       [today era] == [otherDay era])
+    {
+        dayName = @"Today";
+    }
+    
+    cell.dayLabel.text = dayName;
+    
+    
+    
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    [dateFormatter setDateFormat:@"MMMM dd, YYYY"];
+    
+    cell.dateLabel.text = [dateFormatter stringFromDate:date];
+    
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh:mm a"];
+    
+    cell.timeLabel.text = [formatter stringFromDate:date];
+    
+    
+    return cell;
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.dataSource count];
+}
+
+
 @end
