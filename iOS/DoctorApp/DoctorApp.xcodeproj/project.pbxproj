@@ -13,6 +13,9 @@
 		FC1B25001D8CE24800BC6383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1B24FF1D8CE24800BC6383 /* Assets.xcassets */; };
 		FC1B25031D8CE24800BC6383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1B25011D8CE24800BC6383 /* LaunchScreen.storyboard */; };
 		FC1B250B1D8CE48A00BC6383 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC1B250A1D8CE48A00BC6383 /* GoogleService-Info.plist */; };
+		FC74A1201D8E161500DA6021 /* DashBoardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC74A11E1D8E161500DA6021 /* DashBoardTableViewCell.m */; };
+		FC74A1211D8E161500DA6021 /* DashBoardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC74A11F1D8E161500DA6021 /* DashBoardTableViewCell.xib */; };
+		FC74A1231D8E168C00DA6021 /* icon-webcam.png in Resources */ = {isa = PBXBuildFile; fileRef = FC74A1221D8E168C00DA6021 /* icon-webcam.png */; };
 		FCA20D1C1D8CE61900B7C6F3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA20D1A1D8CE61900B7C6F3 /* LoginViewController.m */; };
 		FCA20D1D1D8CE61900B7C6F3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA20D1B1D8CE61900B7C6F3 /* LoginViewController.xib */; };
 		FCA5BD7E1D8DDA3C00E5C7EA /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA5BD7D1D8DDA3C00E5C7EA /* Splash.png */; };
@@ -48,6 +51,10 @@
 		FC1B25021D8CE24800BC6383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC1B25041D8CE24800BC6383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1B250A1D8CE48A00BC6383 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC74A11D1D8E161500DA6021 /* DashBoardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardTableViewCell.h; sourceTree = "<group>"; };
+		FC74A11E1D8E161500DA6021 /* DashBoardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardTableViewCell.m; sourceTree = "<group>"; };
+		FC74A11F1D8E161500DA6021 /* DashBoardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardTableViewCell.xib; sourceTree = "<group>"; };
+		FC74A1221D8E168C00DA6021 /* icon-webcam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-webcam.png"; path = "Images/icon-webcam.png"; sourceTree = "<group>"; };
 		FCA20D181D8CE5BB00B7C6F3 /* DoctorApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoctorApp.entitlements; sourceTree = "<group>"; };
 		FCA20D191D8CE61900B7C6F3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FCA20D1A1D8CE61900B7C6F3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -152,6 +159,7 @@
 		FC5880B41D8DC1FF008E3F0A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FC74A11C1D8E15DD00DA6021 /* ControlSubClass */,
 				FCA20D191D8CE61900B7C6F3 /* LoginViewController.h */,
 				FCA20D1A1D8CE61900B7C6F3 /* LoginViewController.m */,
 				FCA20D1B1D8CE61900B7C6F3 /* LoginViewController.xib */,
@@ -162,9 +170,20 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		FC74A11C1D8E15DD00DA6021 /* ControlSubClass */ = {
+			isa = PBXGroup;
+			children = (
+				FC74A11D1D8E161500DA6021 /* DashBoardTableViewCell.h */,
+				FC74A11E1D8E161500DA6021 /* DashBoardTableViewCell.m */,
+				FC74A11F1D8E161500DA6021 /* DashBoardTableViewCell.xib */,
+			);
+			name = ControlSubClass;
+			sourceTree = "<group>";
+		};
 		FCA5BD7C1D8DDA2200E5C7EA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FC74A1221D8E168C00DA6021 /* icon-webcam.png */,
 				FCA5BD8E1D8DF73D00E5C7EA /* AlertDialog.png */,
 				FCA5BD8F1D8DF73D00E5C7EA /* bottom-nav-stripe.png */,
 				FCA5BD901D8DF73D00E5C7EA /* icon-appt.png */,
@@ -272,6 +291,7 @@
 				FCA5BD9D1D8DF73D00E5C7EA /* icon-settings.png in Resources */,
 				FCA5BD9A1D8DF73D00E5C7EA /* icon-appt.png in Resources */,
 				FCA5BD981D8DF73D00E5C7EA /* AlertDialog.png in Resources */,
+				FC74A1231D8E168C00DA6021 /* icon-webcam.png in Resources */,
 				FCA5BD9E1D8DF73D00E5C7EA /* Login.png in Resources */,
 				FCA5BDA01D8DF73D00E5C7EA /* textFieldAlpha.png in Resources */,
 				FCA5BD9C1D8DF73D00E5C7EA /* icon-profile.png in Resources */,
@@ -281,6 +301,7 @@
 				FCA5BD9F1D8DF73D00E5C7EA /* Splash.png in Resources */,
 				FCA5BD8D1D8DF5B500E5C7EA /* top-nav-dash.png in Resources */,
 				FCE49DE31D8DC57E00F6496E /* DashBoardViewController.xib in Resources */,
+				FC74A1211D8E161500DA6021 /* DashBoardTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC74A1201D8E161500DA6021 /* DashBoardTableViewCell.m in Sources */,
 				FCA5BD871D8DE7FB00E5C7EA /* MyUserDefaults.m in Sources */,
 				FCA20D1C1D8CE61900B7C6F3 /* LoginViewController.m in Sources */,
 				FC1B24F81D8CE24800BC6383 /* AppDelegate.m in Sources */,

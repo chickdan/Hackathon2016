@@ -18,5 +18,6 @@
 
 +(DataBaseManager* )sharedInstance;
 - (void)retreivePatientInfoAndUpdateWithEmail:(NSString*)email patientId:(NSString*)patientId;
+- (void)retreivePatientAppointmentWithResponseCallback:(void (^)(NSDictionary* appointmentDictionary))callback;
 
 @end
