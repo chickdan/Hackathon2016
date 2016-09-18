@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PatientProfileViewController">
             <connections>
+                <outlet property="patientIDLabel" destination="R61-p2-g2s" id="XJq-Ld-64f"/>
                 <outlet property="profilePicture" destination="iNx-Rr-UfH" id="viN-s1-Yci"/>
             </connections>
         </placeholder>
