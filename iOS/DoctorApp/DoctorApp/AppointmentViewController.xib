@@ -53,9 +53,9 @@
     </objects>
     <resources>
         <image name="bottom-nav-stripe.png" width="1125" height="150"/>
-        <image name="icon-appt.png" width="72" height="75"/>
+        <image name="icon-appt.png" width="75" height="75"/>
         <image name="icon-presc.png" width="72" height="72"/>
-        <image name="icon-profile.png" width="57" height="69"/>
+        <image name="icon-profile.png" width="75" height="75"/>
         <image name="icon-settings.png" width="72" height="72"/>
         <image name="top-nav-appt.png" width="1125" height="195"/>
     </resources>

@@ -15,6 +15,7 @@
 		FC1B25001D8CE24800BC6383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1B24FF1D8CE24800BC6383 /* Assets.xcassets */; };
 		FC1B25031D8CE24800BC6383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1B25011D8CE24800BC6383 /* LaunchScreen.storyboard */; };
 		FC1B250B1D8CE48A00BC6383 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC1B250A1D8CE48A00BC6383 /* GoogleService-Info.plist */; };
+		FC37EBA81D8E2D3D009AB657 /* icon-home.png in Resources */ = {isa = PBXBuildFile; fileRef = FC37EBA71D8E2D3D009AB657 /* icon-home.png */; };
 		FC74A1201D8E161500DA6021 /* DashBoardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC74A11E1D8E161500DA6021 /* DashBoardTableViewCell.m */; };
 		FC74A1211D8E161500DA6021 /* DashBoardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC74A11F1D8E161500DA6021 /* DashBoardTableViewCell.xib */; };
 		FC74A1231D8E168C00DA6021 /* icon-webcam.png in Resources */ = {isa = PBXBuildFile; fileRef = FC74A1221D8E168C00DA6021 /* icon-webcam.png */; };
@@ -60,6 +61,7 @@
 		FC1B25021D8CE24800BC6383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC1B25041D8CE24800BC6383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1B250A1D8CE48A00BC6383 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC37EBA71D8E2D3D009AB657 /* icon-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-home.png"; path = "Images/icon-home.png"; sourceTree = "<group>"; };
 		FC74A11D1D8E161500DA6021 /* DashBoardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardTableViewCell.h; sourceTree = "<group>"; };
 		FC74A11E1D8E161500DA6021 /* DashBoardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardTableViewCell.m; sourceTree = "<group>"; };
 		FC74A11F1D8E161500DA6021 /* DashBoardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardTableViewCell.xib; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		FCA5BD7C1D8DDA2200E5C7EA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FC37EBA71D8E2D3D009AB657 /* icon-home.png */,
 				FC74A12D1D8E25D100DA6021 /* top-nav-appt.png */,
 				FC74A1291D8E259700DA6021 /* top-nav-dash.png */,
 				FC74A12A1D8E259700DA6021 /* top-nav-profile.png */,
@@ -330,6 +333,7 @@
 				FCE49DE31D8DC57E00F6496E /* DashBoardViewController.xib in Resources */,
 				FC74A1211D8E161500DA6021 /* DashBoardTableViewCell.xib in Resources */,
 				FC74A12C1D8E259700DA6021 /* top-nav-profile.png in Resources */,
+				FC37EBA81D8E2D3D009AB657 /* icon-home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
