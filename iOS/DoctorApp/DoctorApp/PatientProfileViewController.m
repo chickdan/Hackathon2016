@@ -41,7 +41,7 @@
     [self.prescriptionImageView addGestureRecognizer:prescriptionTapGesture];
     [self.prescriptionImageView setUserInteractionEnabled:YES];
     
-    
+    [self requestPatientData];
     _patientIDLabel.text = [MyUserDefaults retrievePatientId];
     
     // Do any additional setup after loading the view from its nib.
@@ -50,7 +50,7 @@
 - (void)requestPatientData {
     NSString *patientURL = [@"https://fhir-api-dstu2.smarthealthit.org/Patient/" stringByAppendingString:[MyUserDefaults retrievePatientId]];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:patientURL]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:patientURL]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     [NSURLConnection sendAsynchronousRequest:request
@@ -75,9 +75,28 @@
             //dob = [json objectForKey:@"birthdate"];
             
         } else {
-            // update the UI to indicate error
+            [self newFhirUser:request];
         }
     }];
+}
+
+- (void)newFhirUser:(NSMutableURLRequest*)request
+{
+    
+    NSMutableDictionary *newUser = [NSMutableDictionary new];
+    [newUser setObject:@"Patient" forKey:@"resourceType"];
+    [newUser setObject:[MyUserDefaults retrievePatientId] forKey:@"id"];
+    [newUser setObject:[MyUserDefaults retrieveEmail] forKey:@"email"];
+    
+    NSError* error;
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:newUser options:0 error: &error];
+    
+    [request setHTTPMethod:@"PUT"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+    [request setHTTPBody:postData];
+    
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
 }
                             
 - (void)didReceiveMemoryWarning {

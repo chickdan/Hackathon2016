@@ -9,14 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PatientProfileViewController">
             <connections>
-                <outlet property="addressLineOne" destination="SiY-jA-VwB" id="U72-Nu-i4f"/>
-                <outlet property="addressLineTwo" destination="qOm-o2-esB" id="dUh-3A-GWz"/>
                 <outlet property="appointmentImageView" destination="T2L-F2-Pcr" id="KNf-gf-IEi"/>
                 <outlet property="homeImageView" destination="9HN-fW-p4q" id="n14-A7-tiK"/>
                 <outlet property="patientIDLabel" destination="R61-p2-g2s" id="XJq-Ld-64f"/>
                 <outlet property="prescriptionImageView" destination="r97-rG-N3S" id="W7j-XT-7xo"/>
                 <outlet property="profilePicture" destination="iNx-Rr-UfH" id="viN-s1-Yci"/>
-                <outlet property="saveButton" destination="ayh-o0-bKr" id="3Lt-Lg-aU5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="ce5-6x-eMS"/>
             </connections>
         </placeholder>
