@@ -11,6 +11,7 @@
 #import "DashBoardViewController.h"
 #import "PrescriptionViewController.h"
 #import "MyUserDefaults.h"
+#import "GSHealthKitManager.h"
 
 @interface PatientProfileViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
@@ -25,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *stateField;
+@property (weak, nonatomic) IBOutlet UIButton *hrButton;
+@property (weak, nonatomic) IBOutlet UILabel *hrLabel;
 
 @end
 
@@ -252,5 +255,15 @@
 {
     [textField resignFirstResponder];
     return true;
+}
+
+
+
+- (IBAction)readHeartRateButtonPressed:(id)sender {
+    [[GSHealthKitManager sharedManager]readHeartRateWithCompletion:
+     ^(NSArray *results, NSError *error) {
+         NSString *items = [results componentsJoinedByString:@"\n"];
+         _hrLabel.text = items;
+     }];
 }
 @end

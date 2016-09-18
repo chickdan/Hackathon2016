@@ -14,6 +14,8 @@
 		84E15CBE1D8E4606009F4DA7 /* top-nav-presc.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E15CBD1D8E4606009F4DA7 /* top-nav-presc.png */; };
 		84E15CC31D8E53EB009F4DA7 /* input-bkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E15CC21D8E53EB009F4DA7 /* input-bkgd.png */; };
 		84E15CC51D8E7E44009F4DA7 /* ngraves-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E15CC41D8E7E44009F4DA7 /* ngraves-copy.png */; };
+		84E15CCC1D8EB315009F4DA7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E15CCB1D8EB315009F4DA7 /* HealthKit.framework */; };
+		84E15CD31D8EB8F8009F4DA7 /* GSHealthKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E15CD21D8EB8F8009F4DA7 /* GSHealthKitManager.m */; };
 		FC1B24F51D8CE24800BC6383 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1B24F41D8CE24800BC6383 /* main.m */; };
 		FC1B24F81D8CE24800BC6383 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1B24F71D8CE24800BC6383 /* AppDelegate.m */; };
 		FC1B25001D8CE24800BC6383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1B24FF1D8CE24800BC6383 /* Assets.xcassets */; };
@@ -60,6 +62,9 @@
 		84E15CBD1D8E4606009F4DA7 /* top-nav-presc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-nav-presc.png"; sourceTree = "<group>"; };
 		84E15CC21D8E53EB009F4DA7 /* input-bkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-bkgd.png"; sourceTree = "<group>"; };
 		84E15CC41D8E7E44009F4DA7 /* ngraves-copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ngraves-copy.png"; sourceTree = "<group>"; };
+		84E15CCB1D8EB315009F4DA7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		84E15CD11D8EB8B5009F4DA7 /* GSHealthKitManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSHealthKitManager.h; sourceTree = "<group>"; };
+		84E15CD21D8EB8F8009F4DA7 /* GSHealthKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHealthKitManager.m; sourceTree = "<group>"; };
 		9F17758C0D935106CF2EC7F4 /* Pods-DoctorApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorApp/Pods-DoctorApp.release.xcconfig"; sourceTree = "<group>"; };
 		C44DD532AC8DED116375EE24 /* libPods-DoctorApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoctorApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5249B6D4CB6DC232951D00A /* Pods-DoctorApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorApp/Pods-DoctorApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E15CCC1D8EB315009F4DA7 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +139,7 @@
 		E40B485749C1B2DF9E8E8BBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84E15CCB1D8EB315009F4DA7 /* HealthKit.framework */,
 				C44DD532AC8DED116375EE24 /* libPods-DoctorApp.a */,
 			);
 			name = Frameworks;
@@ -187,6 +194,8 @@
 			children = (
 				FC74A11C1D8E15DD00DA6021 /* ControlSubClass */,
 				FCA20D191D8CE61900B7C6F3 /* LoginViewController.h */,
+				84E15CD11D8EB8B5009F4DA7 /* GSHealthKitManager.h */,
+				84E15CD21D8EB8F8009F4DA7 /* GSHealthKitManager.m */,
 				FCA20D1A1D8CE61900B7C6F3 /* LoginViewController.m */,
 				FCA20D1B1D8CE61900B7C6F3 /* LoginViewController.xib */,
 				FCE49DDF1D8DC57E00F6496E /* DashBoardViewController.h */,
@@ -293,6 +302,9 @@
 						DevelopmentTeam = 95UK85LVH5;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -420,6 +432,7 @@
 				FC74A1271D8E24A000DA6021 /* AppointmentViewController.m in Sources */,
 				FC1B24F51D8CE24800BC6383 /* main.m in Sources */,
 				FCE49DE21D8DC57E00F6496E /* DashBoardViewController.m in Sources */,
+				84E15CD31D8EB8F8009F4DA7 /* GSHealthKitManager.m in Sources */,
 				84E15CB01D8E26B7009F4DA7 /* PatientProfileViewController.m in Sources */,
 				FCE49DE61D8DC76000F6496E /* DataBaseManager.m in Sources */,
 			);
