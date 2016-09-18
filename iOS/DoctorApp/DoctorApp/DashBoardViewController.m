@@ -11,13 +11,16 @@
 #import "DataBaseManager.h"
 #import "MyUserDefaults.h"
 #import "DashBoardTableViewCell.h"
+#import "AppointmentViewController.h"
 
 NSString* dateFormat = @"yyyy-MM-dd HH:mm";
 
 @interface DashBoardViewController ()
 @property (nonatomic, strong) NSMutableArray* upcomingAppointmentsTableDataSource;
 @property (nonatomic, strong) IBOutlet UITableView* upcomingAppointmentsTable;
-@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *profileTapGesture;
+@property (nonatomic, strong) IBOutlet UIImageView* profileIconImageView;
+@property (nonatomic, strong) IBOutlet UIImageView* appointmentImageView;
+@property (nonatomic, strong) IBOutlet UIImageView* homeImageView;
 @end
 
 @implementation DashBoardViewController
@@ -25,6 +28,21 @@ NSString* dateFormat = @"yyyy-MM-dd HH:mm";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer* tapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileTapGesture:)];
+    [self.profileIconImageView addGestureRecognizer:tapGestrue];
+    [self.profileIconImageView setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer* appointmentTapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(appointmentTapGesture:)];
+    [self.appointmentImageView addGestureRecognizer:appointmentTapGestrue];
+    [self.appointmentImageView setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer* homeTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(homeTapGesture:)];
+    [self.homeImageView addGestureRecognizer:homeTapGesture];
+    [self.homeImageView setUserInteractionEnabled:YES];
+
+    
+    
     
     [self.upcomingAppointmentsTable setSeparatorColor:[self colorFromHexString:@"#8FC7E6"]];
     
@@ -138,9 +156,22 @@ NSString* dateFormat = @"yyyy-MM-dd HH:mm";
     return 0;
 }
 
-- (IBAction)profileTapGesture:(id)sender{
+- (void)profileTapGesture:(id)sender
+{
     PatientProfileViewController* patientProfileViewController = [[PatientProfileViewController alloc] initWithNibName:@"PatientProfileViewController" bundle:nil];
     [self.navigationController pushViewController:patientProfileViewController animated:YES];
+}
+
+- (void)appointmentTapGesture:(id)sender
+{
+    AppointmentViewController* appointmentViewController = [[AppointmentViewController alloc] initWithNibName:@"AppointmentViewController" bundle:nil];
+    [self.navigationController pushViewController:appointmentViewController animated:YES];
+}
+
+- (void)homeTapGesture:(id)sender
+{
+    DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
+    [self.navigationController pushViewController:dashBoardViewController animated:YES];
 }
 
 @end
