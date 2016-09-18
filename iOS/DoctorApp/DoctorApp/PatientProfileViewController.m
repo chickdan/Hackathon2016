@@ -32,18 +32,28 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:patientURL]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
-                            
-    // optionally update the UI to say 'busy', e.g. placeholders or activity
-    // indicators in parts that are incomplete until the response arrives
+    
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        // optionally update the UI to say 'done'
+
         if (!error) {
             
             NSError* jsonError;
             NSDictionary* json = [NSJSONSerialization JSONObjectWithData: request options: NSJSONReadingMutableContainers error: &jsonError];
+            
             // update the UI here (and only here to the extent it depends on the json)
+            
+            //address = [json objectForKey:@"address"];
+            //city = [json objectForKey:@"address-city"];
+            //zipcode = [json objectForKey:@"address-postalcode"];
+            //state = [json objectForKey:@"address-state"];
+            //name = [json objectForKey:@"name"];
+            //gender = [json objectForKey:@"gender"];
+            //email = [json objectForKey:@"email"];
+            //phone = [json objectForKey:@"phone"];
+            //dob = [json objectForKey:@"birthdate"];
+            
         } else {
             // update the UI to indicate error
         }
