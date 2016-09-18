@@ -16,6 +16,11 @@
 		FC74A1201D8E161500DA6021 /* DashBoardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC74A11E1D8E161500DA6021 /* DashBoardTableViewCell.m */; };
 		FC74A1211D8E161500DA6021 /* DashBoardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC74A11F1D8E161500DA6021 /* DashBoardTableViewCell.xib */; };
 		FC74A1231D8E168C00DA6021 /* icon-webcam.png in Resources */ = {isa = PBXBuildFile; fileRef = FC74A1221D8E168C00DA6021 /* icon-webcam.png */; };
+		FC74A1271D8E24A000DA6021 /* AppointmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC74A1251D8E24A000DA6021 /* AppointmentViewController.m */; };
+		FC74A1281D8E24A000DA6021 /* AppointmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC74A1261D8E24A000DA6021 /* AppointmentViewController.xib */; };
+		FC74A12B1D8E259700DA6021 /* top-nav-dash.png in Resources */ = {isa = PBXBuildFile; fileRef = FC74A1291D8E259700DA6021 /* top-nav-dash.png */; };
+		FC74A12C1D8E259700DA6021 /* top-nav-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = FC74A12A1D8E259700DA6021 /* top-nav-profile.png */; };
+		FC74A12E1D8E25D100DA6021 /* top-nav-appt.png in Resources */ = {isa = PBXBuildFile; fileRef = FC74A12D1D8E25D100DA6021 /* top-nav-appt.png */; };
 		FCA20D1C1D8CE61900B7C6F3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA20D1A1D8CE61900B7C6F3 /* LoginViewController.m */; };
 		FCA20D1D1D8CE61900B7C6F3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA20D1B1D8CE61900B7C6F3 /* LoginViewController.xib */; };
 		FCA5BD7E1D8DDA3C00E5C7EA /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA5BD7D1D8DDA3C00E5C7EA /* Splash.png */; };
@@ -55,6 +60,12 @@
 		FC74A11E1D8E161500DA6021 /* DashBoardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardTableViewCell.m; sourceTree = "<group>"; };
 		FC74A11F1D8E161500DA6021 /* DashBoardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardTableViewCell.xib; sourceTree = "<group>"; };
 		FC74A1221D8E168C00DA6021 /* icon-webcam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-webcam.png"; path = "Images/icon-webcam.png"; sourceTree = "<group>"; };
+		FC74A1241D8E24A000DA6021 /* AppointmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentViewController.h; sourceTree = "<group>"; };
+		FC74A1251D8E24A000DA6021 /* AppointmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentViewController.m; sourceTree = "<group>"; };
+		FC74A1261D8E24A000DA6021 /* AppointmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
+		FC74A1291D8E259700DA6021 /* top-nav-dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top-nav-dash.png"; path = "Images/top-nav-dash.png"; sourceTree = "<group>"; };
+		FC74A12A1D8E259700DA6021 /* top-nav-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top-nav-profile.png"; path = "Images/top-nav-profile.png"; sourceTree = "<group>"; };
+		FC74A12D1D8E25D100DA6021 /* top-nav-appt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top-nav-appt.png"; path = "Images/top-nav-appt.png"; sourceTree = "<group>"; };
 		FCA20D181D8CE5BB00B7C6F3 /* DoctorApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoctorApp.entitlements; sourceTree = "<group>"; };
 		FCA20D191D8CE61900B7C6F3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FCA20D1A1D8CE61900B7C6F3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -166,6 +177,9 @@
 				FCE49DDF1D8DC57E00F6496E /* DashBoardViewController.h */,
 				FCE49DE01D8DC57E00F6496E /* DashBoardViewController.m */,
 				FCE49DE11D8DC57E00F6496E /* DashBoardViewController.xib */,
+				FC74A1241D8E24A000DA6021 /* AppointmentViewController.h */,
+				FC74A1251D8E24A000DA6021 /* AppointmentViewController.m */,
+				FC74A1261D8E24A000DA6021 /* AppointmentViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -183,6 +197,9 @@
 		FCA5BD7C1D8DDA2200E5C7EA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FC74A12D1D8E25D100DA6021 /* top-nav-appt.png */,
+				FC74A1291D8E259700DA6021 /* top-nav-dash.png */,
+				FC74A12A1D8E259700DA6021 /* top-nav-profile.png */,
 				FC74A1221D8E168C00DA6021 /* icon-webcam.png */,
 				FCA5BD8E1D8DF73D00E5C7EA /* AlertDialog.png */,
 				FCA5BD8F1D8DF73D00E5C7EA /* bottom-nav-stripe.png */,
@@ -288,6 +305,7 @@
 				FCA5BD991D8DF73D00E5C7EA /* bottom-nav-stripe.png in Resources */,
 				FC1B250B1D8CE48A00BC6383 /* GoogleService-Info.plist in Resources */,
 				FCA5BD9B1D8DF73D00E5C7EA /* icon-presc.png in Resources */,
+				FC74A12E1D8E25D100DA6021 /* top-nav-appt.png in Resources */,
 				FCA5BD9D1D8DF73D00E5C7EA /* icon-settings.png in Resources */,
 				FCA5BD9A1D8DF73D00E5C7EA /* icon-appt.png in Resources */,
 				FCA5BD981D8DF73D00E5C7EA /* AlertDialog.png in Resources */,
@@ -297,11 +315,14 @@
 				FCA5BD9C1D8DF73D00E5C7EA /* icon-profile.png in Resources */,
 				FCA5BD821D8DDCE800E5C7EA /* textFieldAlpha.png in Resources */,
 				FCA20D1D1D8CE61900B7C6F3 /* LoginViewController.xib in Resources */,
+				FC74A1281D8E24A000DA6021 /* AppointmentViewController.xib in Resources */,
 				FCA5BD7E1D8DDA3C00E5C7EA /* Splash.png in Resources */,
 				FCA5BD9F1D8DF73D00E5C7EA /* Splash.png in Resources */,
 				FCA5BD8D1D8DF5B500E5C7EA /* top-nav-dash.png in Resources */,
+				FC74A12B1D8E259700DA6021 /* top-nav-dash.png in Resources */,
 				FCE49DE31D8DC57E00F6496E /* DashBoardViewController.xib in Resources */,
 				FC74A1211D8E161500DA6021 /* DashBoardTableViewCell.xib in Resources */,
+				FC74A12C1D8E259700DA6021 /* top-nav-profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +385,7 @@
 				FCA5BD871D8DE7FB00E5C7EA /* MyUserDefaults.m in Sources */,
 				FCA20D1C1D8CE61900B7C6F3 /* LoginViewController.m in Sources */,
 				FC1B24F81D8CE24800BC6383 /* AppDelegate.m in Sources */,
+				FC74A1271D8E24A000DA6021 /* AppointmentViewController.m in Sources */,
 				FC1B24F51D8CE24800BC6383 /* main.m in Sources */,
 				FCE49DE21D8DC57E00F6496E /* DashBoardViewController.m in Sources */,
 				FCE49DE61D8DC76000F6496E /* DataBaseManager.m in Sources */,

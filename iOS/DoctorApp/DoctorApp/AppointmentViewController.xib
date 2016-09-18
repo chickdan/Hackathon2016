@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppointmentViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top-nav-appt.png" translatesAutoresizingMaskIntoConstraints="NO" id="a1u-9R-SAy">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kB9-QD-JLV">
+                    <rect key="frame" x="338" y="31" width="24" height="24"/>
+                    <state key="normal" backgroundImage="icon-settings.png"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bottom-nav-stripe.png" translatesAutoresizingMaskIntoConstraints="NO" id="As8-0k-fQb">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="OyA-lm-xcl">
+                    <rect key="frame" x="0.0" y="629" width="125" height="25"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-appt.png" translatesAutoresizingMaskIntoConstraints="NO" id="9sK-A1-bRZ">
+                    <rect key="frame" x="125" y="629" width="125" height="25"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-presc.png" translatesAutoresizingMaskIntoConstraints="NO" id="e7k-ka-kZh">
+                    <rect key="frame" x="249" y="629" width="125" height="25"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bottom-nav-stripe.png" width="1125" height="150"/>
+        <image name="icon-appt.png" width="72" height="75"/>
+        <image name="icon-presc.png" width="72" height="72"/>
+        <image name="icon-profile.png" width="57" height="69"/>
+        <image name="icon-settings.png" width="72" height="72"/>
+        <image name="top-nav-appt.png" width="1125" height="195"/>
+    </resources>
+</document>

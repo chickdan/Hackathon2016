@@ -10,9 +10,11 @@
 
 @implementation DashBoardTableViewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
+    self.webCamButton.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
