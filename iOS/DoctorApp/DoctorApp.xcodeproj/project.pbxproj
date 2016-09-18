@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		50036C2F18CFD2D0CC2295FF /* libPods-DoctorApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C44DD532AC8DED116375EE24 /* libPods-DoctorApp.a */; };
+		84E15CB01D8E26B7009F4DA7 /* PatientProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E15CAE1D8E26B7009F4DA7 /* PatientProfileViewController.m */; };
+		84E15CB11D8E26B7009F4DA7 /* PatientProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E15CAF1D8E26B7009F4DA7 /* PatientProfileViewController.xib */; };
 		FC1B24F51D8CE24800BC6383 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1B24F41D8CE24800BC6383 /* main.m */; };
 		FC1B24F81D8CE24800BC6383 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1B24F71D8CE24800BC6383 /* AppDelegate.m */; };
 		FC1B25001D8CE24800BC6383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1B24FF1D8CE24800BC6383 /* Assets.xcassets */; };
@@ -45,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84E15CAD1D8E26B7009F4DA7 /* PatientProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientProfileViewController.h; sourceTree = "<group>"; };
+		84E15CAE1D8E26B7009F4DA7 /* PatientProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientProfileViewController.m; sourceTree = "<group>"; };
+		84E15CAF1D8E26B7009F4DA7 /* PatientProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientProfileViewController.xib; sourceTree = "<group>"; };
 		9F17758C0D935106CF2EC7F4 /* Pods-DoctorApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorApp/Pods-DoctorApp.release.xcconfig"; sourceTree = "<group>"; };
 		C44DD532AC8DED116375EE24 /* libPods-DoctorApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoctorApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5249B6D4CB6DC232951D00A /* Pods-DoctorApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorApp/Pods-DoctorApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +185,9 @@
 				FC74A1241D8E24A000DA6021 /* AppointmentViewController.h */,
 				FC74A1251D8E24A000DA6021 /* AppointmentViewController.m */,
 				FC74A1261D8E24A000DA6021 /* AppointmentViewController.xib */,
+				84E15CAD1D8E26B7009F4DA7 /* PatientProfileViewController.h */,
+				84E15CAE1D8E26B7009F4DA7 /* PatientProfileViewController.m */,
+				84E15CAF1D8E26B7009F4DA7 /* PatientProfileViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -318,8 +326,8 @@
 				FC74A1281D8E24A000DA6021 /* AppointmentViewController.xib in Resources */,
 				FCA5BD7E1D8DDA3C00E5C7EA /* Splash.png in Resources */,
 				FCA5BD9F1D8DF73D00E5C7EA /* Splash.png in Resources */,
-				FCA5BD8D1D8DF5B500E5C7EA /* top-nav-dash.png in Resources */,
 				FC74A12B1D8E259700DA6021 /* top-nav-dash.png in Resources */,
+				84E15CB11D8E26B7009F4DA7 /* PatientProfileViewController.xib in Resources */,
 				FCE49DE31D8DC57E00F6496E /* DashBoardViewController.xib in Resources */,
 				FC74A1211D8E161500DA6021 /* DashBoardTableViewCell.xib in Resources */,
 				FC74A12C1D8E259700DA6021 /* top-nav-profile.png in Resources */,
@@ -388,6 +396,7 @@
 				FC74A1271D8E24A000DA6021 /* AppointmentViewController.m in Sources */,
 				FC1B24F51D8CE24800BC6383 /* main.m in Sources */,
 				FCE49DE21D8DC57E00F6496E /* DashBoardViewController.m in Sources */,
+				84E15CB01D8E26B7009F4DA7 /* PatientProfileViewController.m in Sources */,
 				FCE49DE61D8DC76000F6496E /* DataBaseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
