@@ -32,9 +32,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom-nav-stripe.png" translatesAutoresizingMaskIntoConstraints="NO" id="As8-0k-fQb"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="OyA-lm-xcl">
                     <gestureRecognizers/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="Uof-92-KqR" appends="YES" id="EsC-G2-4aD"/>
-                    </connections>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-appt.png" translatesAutoresizingMaskIntoConstraints="NO" id="9sK-A1-bRZ"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-home.png" translatesAutoresizingMaskIntoConstraints="NO" id="W3y-lc-r2b">
@@ -108,7 +105,6 @@
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
-        <tapGestureRecognizer id="Uof-92-KqR"/>
     </objects>
     <resources>
         <image name="bottom-nav-stripe.png" width="1125" height="150"/>

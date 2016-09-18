@@ -15,7 +15,7 @@
 
 @import Firebase;
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
 @property(nonatomic, strong) IBOutlet UIButton* loginButton;
 @property(nonatomic, strong) IBOutlet UITextField* emailTextField;
 @property(nonatomic, strong) IBOutlet UITextField* passwordTextField;
@@ -33,6 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.emailTextField.delegate = self;
+    self.passwordTextField.delegate = self;
+    self.passwordTextField.delegate = self;
     
     if ([MyUserDefaults isTouchIDAllowed])
     {
@@ -103,6 +107,7 @@
     }
     // Do any additional setup after loading the view from its nib.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -221,6 +226,10 @@
     DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
     [self.navigationController pushViewController:dashBoardViewController animated:YES];
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return true;
+}
 
 @end
