@@ -12,14 +12,16 @@
 #import "MyUserDefaults.h"
 #import "DashBoardTableViewCell.h"
 #import "AppointmentViewController.h"
+#import "PrescriptionViewController.h"
 
 NSString* dateFormat = @"yyyy-MM-dd HH:mm";
 
 @interface DashBoardViewController ()
 @property (nonatomic, strong) NSMutableArray* upcomingAppointmentsTableDataSource;
 @property (nonatomic, strong) IBOutlet UITableView* upcomingAppointmentsTable;
-@property (nonatomic, strong) IBOutlet UIImageView* profileIconImageView;
+@property (nonatomic, strong) IBOutlet UIImageView* profileImageView;
 @property (nonatomic, strong) IBOutlet UIImageView* appointmentImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *prescriptionImageView;
 @property (nonatomic, strong) IBOutlet UIImageView* homeImageView;
 @end
 
@@ -29,17 +31,17 @@ NSString* dateFormat = @"yyyy-MM-dd HH:mm";
 {
     [super viewDidLoad];
     
-    UITapGestureRecognizer* tapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileTapGesture:)];
-    [self.profileIconImageView addGestureRecognizer:tapGestrue];
-    [self.profileIconImageView setUserInteractionEnabled:YES];
+    UITapGestureRecognizer* profileTapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileTapGesture:)];
+    [self.profileImageView addGestureRecognizer:profileTapGestrue];
+    [self.profileImageView setUserInteractionEnabled:YES];
     
     UITapGestureRecognizer* appointmentTapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(appointmentTapGesture:)];
     [self.appointmentImageView addGestureRecognizer:appointmentTapGestrue];
     [self.appointmentImageView setUserInteractionEnabled:YES];
     
-    UITapGestureRecognizer* homeTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(homeTapGesture:)];
-    [self.homeImageView addGestureRecognizer:homeTapGesture];
-    [self.homeImageView setUserInteractionEnabled:YES];
+    UITapGestureRecognizer* prescriptionTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(prescriptionTapGesture:)];
+    [self.prescriptionImageView addGestureRecognizer:prescriptionTapGesture];
+    [self.prescriptionImageView setUserInteractionEnabled:YES];
 
     
     
@@ -168,10 +170,10 @@ NSString* dateFormat = @"yyyy-MM-dd HH:mm";
     [self.navigationController pushViewController:appointmentViewController animated:YES];
 }
 
-//- (void)homeTapGesture:(id)sender
-//{
-//    DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
-//    [self.navigationController pushViewController:dashBoardViewController animated:YES];
-//}
+- (void)prescriptionTapGesture:(id)sender
+{
+    PrescriptionViewController* prescriptionViewController = [[PrescriptionViewController alloc] initWithNibName:@"PrescriptionViewController" bundle:nil];
+    [self.navigationController pushViewController:prescriptionViewController animated:YES];
+}
 
 @end

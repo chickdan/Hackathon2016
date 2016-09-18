@@ -10,6 +10,7 @@
 #import "PatientProfileViewController.h"
 #import "DashBoardViewController.h"
 #import "DashBoardTableViewCell.h"
+#import "PrescriptionViewController.h"
 #import "DataBaseManager.h"
 #import "MyUserDefaults.h"
 
@@ -20,6 +21,7 @@ NSString* theDateFormat = @"yyyy-MM-dd HH:mm";
 @property (nonatomic, strong) IBOutlet UIImageView* profileIconImageView;
 @property (nonatomic, strong) IBOutlet UIImageView* appointmentImageView;
 @property (nonatomic, strong) IBOutlet UIImageView* homeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *prescriptionImageView;
 @property (nonatomic, strong) IBOutlet UITableView* appointmentTableView;
 @end
 
@@ -87,11 +89,11 @@ NSString* theDateFormat = @"yyyy-MM-dd HH:mm";
     [self.navigationController pushViewController:patientProfileViewController animated:YES];
 }
 
-//- (void)appointmentTapGesture:(id)sender
-//{
-//    AppointmentViewController* appointmentViewController = [[AppointmentViewController alloc] initWithNibName:@"AppointmentViewController" bundle:nil];
-//    [self.navigationController pushViewController:appointmentViewController animated:YES];
-//}
+- (void)prescriptionTapGesture:(id)sender
+{
+    PrescriptionViewController* prescriptionViewController = [[PrescriptionViewController alloc] initWithNibName:@"PrescriptionViewController" bundle:nil];
+    [self.navigationController pushViewController:prescriptionViewController animated:YES];
+}
 
 - (void)homeTapGesture:(id)sender
 {

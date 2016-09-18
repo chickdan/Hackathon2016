@@ -9,6 +9,7 @@
 #import "PatientProfileViewController.h"
 #import "AppointmentViewController.h"
 #import "DashBoardViewController.h"
+#import "PrescriptionViewController.h"
 #import "MyUserDefaults.h"
 
 @interface PatientProfileViewController ()
@@ -17,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *appointmentImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *homeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *prescriptionImageView;
 
 @end
 
@@ -26,6 +28,19 @@
     [super viewDidLoad];
     self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
     self.profilePicture.clipsToBounds = YES;
+    
+    UITapGestureRecognizer* appointmentTapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(appointmentTapGesture:)];
+    [self.appointmentImageView addGestureRecognizer:appointmentTapGestrue];
+    [self.appointmentImageView setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer* homeTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(homeTapGesture:)];
+    [self.homeImageView addGestureRecognizer:homeTapGesture];
+    [self.homeImageView setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer* prescriptionTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(prescriptionTapGesture:)];
+    [self.prescriptionImageView addGestureRecognizer:prescriptionTapGesture];
+    [self.prescriptionImageView setUserInteractionEnabled:YES];
+    
     
     _patientIDLabel.text = [MyUserDefaults retrievePatientId];
     
@@ -104,5 +119,11 @@
 {
     DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
     [self.navigationController pushViewController:dashBoardViewController animated:YES];
+}
+
+- (void)prescriptionTapGesture:(id)sender
+{
+    PrescriptionViewController* prescriptionViewController = [[PrescriptionViewController alloc] initWithNibName:@"PrescriptionViewController" bundle:nil];
+    [self.navigationController pushViewController:prescriptionViewController animated:YES];
 }
 @end

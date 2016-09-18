@@ -11,7 +11,8 @@
             <connections>
                 <outlet property="appointmentImageView" destination="N5l-ro-swz" id="dO3-UZ-8ZM"/>
                 <outlet property="homeImageView" destination="2op-C8-dnA" id="V8C-2t-eY8"/>
-                <outlet property="profileIconImageView" destination="vfb-Ch-7cM" id="dvH-h0-UJY"/>
+                <outlet property="prescriptionImageView" destination="VQC-DN-9AJ" id="gnL-tg-sAp"/>
+                <outlet property="profileImageView" destination="vfb-Ch-7cM" id="fpD-hc-FUy"/>
                 <outlet property="upcomingAppointmentsTable" destination="0yb-p2-oco" id="u6G-ml-rOD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

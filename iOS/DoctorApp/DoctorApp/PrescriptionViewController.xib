@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrescriptionViewController">
             <connections>
+                <outlet property="appointmentImageView" destination="GOF-KV-1r2" id="QXN-Ss-juO"/>
+                <outlet property="homeImageView" destination="G1L-vV-GpM" id="UgK-Ou-3vi"/>
+                <outlet property="profileImageView" destination="0Sx-x2-nSn" id="xtw-FZ-LoU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +18,77 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bottom-nav-stripe.png" translatesAutoresizingMaskIntoConstraints="NO" id="4ec-hl-rTS">
+                    <frame key="frameInset" minY="616" width="375" height="51"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon-profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Sx-x2-nSn">
+                    <frame key="frameInset" minX="81" minY="628" width="94" height="27"/>
+                    <gestureRecognizers/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon-appt.png" translatesAutoresizingMaskIntoConstraints="NO" id="GOF-KV-1r2">
+                    <frame key="frameInset" minX="184" minY="628" width="94" height="27"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="1dH-EQ-XmW" appends="YES" id="oy0-TM-Tsa"/>
+                    </connections>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon-home.png" translatesAutoresizingMaskIntoConstraints="NO" id="G1L-vV-GpM">
+                    <frame key="frameInset" minY="629" width="94" height="25"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="C9p-U5-dxa"/>
+                        <constraint firstAttribute="width" constant="94" id="H38-tx-KyZ"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="1dH-EQ-XmW" appends="YES" id="Kyd-ch-Oor"/>
+                    </connections>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon-presc.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dgv-rF-TUE">
+                    <frame key="frameInset" minX="277" minY="628" width="94" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="94" id="quD-G5-rns"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top-nav-presc.png" translatesAutoresizingMaskIntoConstraints="NO" id="a47-Ef-uXm">
+                    <frame key="frameInset" width="375" height="67"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPh-vL-QXL">
+                    <frame key="frameInset" minX="339" minY="31" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="EXa-mg-7e1"/>
+                        <constraint firstAttribute="height" constant="24" id="kv5-QC-ZId"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="icon-settings.png"/>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="GOF-KV-1r2" firstAttribute="top" secondItem="Dgv-rF-TUE" secondAttribute="top" id="2nZ-SZ-SmE"/>
+                <constraint firstItem="GOF-KV-1r2" firstAttribute="leading" secondItem="0Sx-x2-nSn" secondAttribute="trailing" constant="9" id="NBH-bw-XGl"/>
+                <constraint firstItem="4ec-hl-rTS" firstAttribute="centerY" secondItem="GOF-KV-1r2" secondAttribute="centerY" id="OuF-ym-Qry"/>
+                <constraint firstItem="0Sx-x2-nSn" firstAttribute="top" secondItem="GOF-KV-1r2" secondAttribute="top" id="dWj-1s-js2"/>
+                <constraint firstItem="GOF-KV-1r2" firstAttribute="bottom" secondItem="Dgv-rF-TUE" secondAttribute="bottom" id="dZ3-qU-oYJ"/>
+                <constraint firstItem="GOF-KV-1r2" firstAttribute="leading" secondItem="G1L-vV-GpM" secondAttribute="trailing" constant="90" id="fWP-sv-Zup"/>
+                <constraint firstItem="G1L-vV-GpM" firstAttribute="centerY" secondItem="4ec-hl-rTS" secondAttribute="centerY" id="naC-zt-gOM"/>
+                <constraint firstItem="4ec-hl-rTS" firstAttribute="leading" secondItem="G1L-vV-GpM" secondAttribute="leading" id="oId-7K-MH8"/>
+                <constraint firstItem="0Sx-x2-nSn" firstAttribute="bottom" secondItem="GOF-KV-1r2" secondAttribute="bottom" id="txz-7e-OBG"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="1dH-EQ-XmW" appends="YES" id="DLx-Of-iWV"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="1dH-EQ-XmW"/>
     </objects>
+    <resources>
+        <image name="bottom-nav-stripe.png" width="1125" height="150"/>
+        <image name="icon-appt.png" width="75" height="75"/>
+        <image name="icon-home.png" width="93" height="75"/>
+        <image name="icon-presc.png" width="72" height="72"/>
+        <image name="icon-profile.png" width="75" height="75"/>
+        <image name="icon-settings.png" width="72" height="72"/>
+        <image name="top-nav-presc.png" width="1125" height="195"/>
+    </resources>
 </document>

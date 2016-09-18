@@ -7,8 +7,14 @@
 //
 
 #import "PrescriptionViewController.h"
+#import "PatientProfileViewController.h"
+#import "AppointmentViewController.h"
+#import "DashBoardViewController.h"
 
 @interface PrescriptionViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *appointmentImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *homeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @end
 
@@ -16,6 +22,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer* profileTapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileTapGesture:)];
+    [self.profileImageView addGestureRecognizer:profileTapGestrue];
+    [self.profileImageView setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer* appointmentTapGestrue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(appointmentTapGesture:)];
+    [self.appointmentImageView addGestureRecognizer:appointmentTapGestrue];
+    [self.appointmentImageView setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer* homeTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(homeTapGesture:)];
+    [self.homeImageView addGestureRecognizer:homeTapGesture];
+    [self.homeImageView setUserInteractionEnabled:YES];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -33,5 +52,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)appointmentTapGesture:(id)sender
+{
+    AppointmentViewController* appointmentViewController = [[AppointmentViewController alloc] initWithNibName:@"AppointmentViewController" bundle:nil];
+    [self.navigationController pushViewController:appointmentViewController animated:YES];
+}
+
+- (void)homeTapGesture:(id)sender
+{
+    DashBoardViewController* dashBoardViewController = [[DashBoardViewController alloc] initWithNibName:@"DashBoardViewController" bundle:nil];
+    [self.navigationController pushViewController:dashBoardViewController animated:YES];
+}
+
+- (void)profileTapGesture:(id)sender
+{
+    PatientProfileViewController* patientProfileViewController = [[PatientProfileViewController alloc] initWithNibName:@"PatientProfileViewController" bundle:nil];
+    [self.navigationController pushViewController:patientProfileViewController animated:YES];
+}
 
 @end
